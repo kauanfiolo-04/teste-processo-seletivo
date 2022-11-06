@@ -6,3 +6,23 @@
 
 // Escreva um código que recebe dois números e que retorna um booleano dizendo se o primeiro esconde o segundo.
 
+function checaNumeroEscondido(numero,numeroOculto) {
+  
+    const numO=numeroOculto.toString().split('')
+    const str=numero.toString().split('')  
+    let count=0
+    numO.forEach(element=>{
+      if(str.includes(element)){
+        count++
+      }
+    })
+    
+    if(count!==numO.length){
+      return false
+    }else{
+      return true
+    }
+
+}
+
+console.log(checaNumeroEscondido())

@@ -24,22 +24,33 @@ const x = [
 //0111111110
 // Desenvolva um algoritmo que receba um array de valores binários (como o exemplo acima) e retorne a representação decimal da senha.
 
-const batata = (senha) => {
-    let UNS = 0
-  let ZEROS = 0
-  const caracteres=[]
-  const array = senha.map((item) => {
-    return item.split('')
-  });
-
-  array.forEach((element) => {
-    element.forEach((num) => {
-      num==='1' ? UNS++ : ZEROS++ 
-    })
-     UNS > ZEROS || UNS === ZEROS? caracteres.push('1') : caracteres.push('0')
+function calculaNumeroDaSenha(senha) {
+  
+  const elementos=senha.map((item)=>{
+   item.split('').forEach(element=>{
+    
+   })
   })
   
-console.log(caracteres)
-  
+          
+//   const pwdBin= linhas.map(item=>{
+//     let UNS=0
+//     let ZEROS=0
+//     item.forEach(element=>{
+//       element==='1' ? UNS++ : ZEROS++ 
+//     })
+//     console.log(UNS)
+//     console.log(`${ZEROS} \n`)
+//     if(UNS>=ZEROS){
+//       return 1
+//     }else{
+//       return 0
+//     }
+//   })
+//    let senhaBin=pwdBin.join('')
+//    console.log(senhaBin)
+//    return parseInt(senhaBin, 2)
+ 
 }
-batata(x)
+calculaNumeroDaSenha(x)
+
