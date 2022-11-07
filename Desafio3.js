@@ -10,47 +10,52 @@
 // Exemplo: A primeira coluna da lista tem como dígito predominante o número 1, sendo assim, o primeiro dígito - dos 10 - da senha é 1.
 
 const x = [
-  "0110100000",
-  "1001011111",
-  "1110001010",
-  "0111010101",
+  "0110100000", 
+  "1001011111", 
+  "1110001010", 
+  "0111010101", 
   "0011100110",
-  "1010011001",
-  "1101100100",
-  "1011010100",
-  "1001100111",
-  "1000011000",
+  "1010011001", 
+  "1101100100", 
+  "1011010100", 
+  "1001100111", 
+  "1000011000"  
 ];
 //0111111110
 // Desenvolva um algoritmo que receba um array de valores binários (como o exemplo acima) e retorne a representação decimal da senha.
 
 function calculaNumeroDaSenha(senha) {
   
-  const elementos=senha.map((item)=>{
-   item.split('').forEach(element=>{
-    
-   })
+
+  const matriz=senha.map(item=>{
+    return item.split('')
   })
-  
-          
-//   const pwdBin= linhas.map(item=>{
-//     let UNS=0
-//     let ZEROS=0
-//     item.forEach(element=>{
-//       element==='1' ? UNS++ : ZEROS++ 
-//     })
-//     console.log(UNS)
-//     console.log(`${ZEROS} \n`)
-//     if(UNS>=ZEROS){
-//       return 1
-//     }else{
-//       return 0
-//     }
-//   })
-//    let senhaBin=pwdBin.join('')
-//    console.log(senhaBin)
-//    return parseInt(senhaBin, 2)
+
+  const columns=matriz.map((row, i)=>{
+    let arr=[]
+    row.forEach((item, j)=>{
+      arr.push(matriz[j][i])
+    })
+    return arr
+  })
+         
+  const pwdBin= columns.map(item=>{
+    let UNS=0
+    let ZEROS=0
+    item.forEach(element=>{
+      element==='1' ? UNS++ : ZEROS++ 
+    })
+    
+    if(UNS>=ZEROS){
+      return 1
+    }else{
+      return 0
+    }
+  })
+   let senhaBin=pwdBin.join('')
+   
+   return parseInt(senhaBin, 2)
  
 }
-calculaNumeroDaSenha(x)
+console.log(calculaNumeroDaSenha(x))
 
